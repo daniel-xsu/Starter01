@@ -1,0 +1,43 @@
+extends layout
+
+block content
+    div.row-fluid
+        h1 title
+        form.form-horizontal.span12(method="post", enctype="multipart/form-data")
+            fieldset
+                legend  Message detail information
+                br
+                div.row
+                    div.span8
+                        div.control-group
+                            label.control-label(for="subject") Subject:
+                            div.controls
+                                input(type="text", name="subject", id="subject", placeholder="add your subjects")
+                        div.control-group
+                            label.control-label(for="contents") Contents:
+                            div.controls
+                                textarea(name="contents", id="contents", style="width: 90%;", rows="10", placeholder="add detail description of your message")
+                        div.control-group
+                            label.control-label(for="author") Author:
+                            div.controls
+                                input(type="text", name="author", id="author", placeholder="put your name or email")
+                        div.control-group
+                            label.control-label(for="thumbnail") Display Thumbnail:
+                            div.controls
+                                input(type="file", name="thumbnailFile", id="thumbnailFile")
+                        div.control-group
+                            label.control-label(for="audioFile") Audio File:
+                            div.controls
+                                input(type="file", name="audioFile", id="audioFile")
+                        div.control-group
+                            label.control-label(for="videoPosterFile") Video Poster File:
+                            div.controls
+                                input(type="file", name="videoPosterFile", id="videoPosterFile")
+                        div.control-group
+                            label.control-label(for="videoFile") Video File:
+                            div.controls
+                                input(type="file", name="videoFile", id="videoFile")
+            div.form-actions
+                a.btn.btn-primary.close.pull-right(href="/messages")
+                    p return to list
+                button.btn.btn-primary(type='submit') Save
